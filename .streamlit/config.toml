@@ -1,7 +1,10 @@
+# .streamlit/config.toml — explicit but Cloud-friendly defaults
 [server]
 headless = true
 address = "0.0.0.0"
-port = 5000
+port = 8501
+enableCORS = false
+enableXsrfProtection = true
 
 [theme]
 base = "light"
