@@ -11,6 +11,7 @@
     "sourceMap": true,
     "declaration": true,
     "strict": true,
+    "strictNullChecks": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

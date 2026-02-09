@@ -5,7 +5,7 @@ import IVisual = powerbi.extensibility.visual.IVisual;
 import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructorOptions;
 import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions;
 
-export class ChatbotVisual implements IVisual {
+export default class ChatbotVisual implements IVisual {
   private root: HTMLDivElement;
   private chatHistory: HTMLDivElement;
   private inputBox: HTMLInputElement;
@@ -103,8 +103,9 @@ export class ChatbotVisual implements IVisual {
         const candidate =
           (typeof data.response === "string" && data.response) ||
           (typeof data.message === "string" && data.message) ||
-          (typeof data.text === "string" && data.text);
-        replyText = candidate ?? JSON.stringify(data);
+          (typeof data.text === "string" && data.text) ||
+          "";
+        replyText = candidate || JSON.stringify(data);
       } else {
         replyText = await response.text();
       }
