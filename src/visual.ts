@@ -5,7 +5,7 @@ import IVisual = powerbi.extensibility.visual.IVisual;
 import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructorOptions;
 import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions;
 
-export default class ChatbotVisual implements IVisual {
+export class ChatbotVisual implements IVisual {
   private root: HTMLDivElement;
   private chatHistory: HTMLDivElement;
   private inputBox: HTMLInputElement;
