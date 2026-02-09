@@ -12,7 +12,7 @@ export class ChatbotVisual implements IVisual {
   private sendButton: HTMLButtonElement;
   private settings: ChatbotSettings;
 
-  constructor(options: VisualConstructorOptions) {
+  constructor(options?: VisualConstructorOptions) {
     this.settings = new ChatbotSettings();
 
     this.root = document.createElement("div");
@@ -40,7 +40,9 @@ export class ChatbotVisual implements IVisual {
     this.root.appendChild(this.chatHistory);
     this.root.appendChild(inputRow);
 
-    options.element.appendChild(this.root);
+    if (options && options.element) {
+      options.element.appendChild(this.root);
+    }
 
     this.sendButton.addEventListener("click", () => {
       void this.handleSend();
@@ -100,11 +102,14 @@ export class ChatbotVisual implements IVisual {
 
       if (contentType.includes("application/json")) {
         const data = (await response.json()) as Record<string, unknown>;
-        const candidate =
-          (typeof data.response === "string" && data.response) ||
-          (typeof data.message === "string" && data.message) ||
-          (typeof data.text === "string" && data.text) ||
-          "";
+        let candidate = "";
+        if (typeof data.response === "string" && data.response) {
+          candidate = data.response;
+        } else if (typeof data.message === "string" && data.message) {
+          candidate = data.message;
+        } else if (typeof data.text === "string" && data.text) {
+          candidate = data.text;
+        }
         replyText = candidate || JSON.stringify(data);
       } else {
         replyText = await response.text();
