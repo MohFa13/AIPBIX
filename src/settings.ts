@@ -31,12 +31,12 @@ export function buildFormattingModel(settings: ChatbotSettings): powerbi.visuals
                 control: {
                   type: powerbi.visuals.FormattingComponent.TextInput,
                   properties: {
+                    placeholder: "http://localhost:8000/chat",
                     descriptor: {
                       objectName: chatbotSettingsObjectName,
                       propertyName: endpointUrlPropertyName
                     },
-                    value: settings.endpointUrl,
-                    placeholder: "http://localhost:8000/chat"
+                    value: settings.endpointUrl
                   }
                 }
               }
@@ -45,7 +45,7 @@ export function buildFormattingModel(settings: ChatbotSettings): powerbi.visuals
         ]
       }
     ]
-  } as unknown as powerbi.visuals.FormattingModel;
+  };
 }
 
 function getValue<T>(
