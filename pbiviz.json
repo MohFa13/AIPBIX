@@ -1,0 +1,22 @@
+{
+  "visual": {
+    "name": "ChatbotVisual",
+    "displayName": "Chatbot Visual",
+    "guid": "ChatbotVisual2F9A3C8D12A341F5A2A5D8A7B9C1D2E3",
+    "visualClassName": "ChatbotVisual",
+    "version": "1.0.0.0",
+    "description": "Responsive chatbot visual for Power BI.",
+    "supportUrl": "https://example.com/support",
+    "gitHubUrl": "https://example.com/repo"
+  },
+  "apiVersion": "5.3.0",
+  "author": {
+    "name": "CTO New",
+    "email": "support@example.com"
+  },
+  "assets": {
+    "icon": "assets/icon.svg"
+  },
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json"
+}

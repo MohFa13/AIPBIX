@@ -1,0 +1,26 @@
+{
+  "dataRoles": [],
+  "dataViewMappings": [
+    {
+      "table": {
+        "rows": {
+          "select": []
+        }
+      }
+    }
+  ],
+  "objects": {
+    "chatbotSettings": {
+      "displayName": "Chatbot",
+      "description": "Chatbot endpoint configuration.",
+      "properties": {
+        "endpointUrl": {
+          "displayName": "Endpoint URL",
+          "type": {
+            "text": true
+          }
+        }
+      }
+    }
+  }
+}
